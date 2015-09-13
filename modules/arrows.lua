@@ -5,6 +5,9 @@ local position = import('utils/position')
 local monitors = import('utils/monitors')
 
 local function module_init()
+    local duration = config:get("animation.duration", 0)
+    window.animationDuration = duration
+
     local mash = config:get("arrows.mash", { "cmd", "ctrl", "alt" })
     local keys = config:get("arrows.keys", {
         UP = "top",
